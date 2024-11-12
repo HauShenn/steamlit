@@ -71,8 +71,8 @@ def get_game_content(category, game_name):
             return [None]
 
 def main():
-    st.set_page_config(page_title="Guild Game AI Bot", page_icon="🎮")
-    st.title("Guild Game AI Bot")
+    st.set_page_config(page_title="Gamers Compass", page_icon="🎮")
+    st.title("Gamers Compass")
     st.write("Get information about your favorite games!")
 
     # Category selection using buttons
