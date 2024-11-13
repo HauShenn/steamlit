@@ -147,7 +147,7 @@ class GamersCompass:
         # Encode other special characters in the game name
         encoded_game_name = urllib.parse.quote(game_name)
         
-        url = f"https://www.gamespot.com/games/{encoded_game_name}/news/"
+        url = f"https://sea.ign.com/{encoded_game_name}"
         
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as response:
@@ -164,7 +164,7 @@ class GamersCompass:
                     
                     return news_items
                 else:
-                    return "Failed to retrieve news"
+                    return "Incorrect Game Title!"
 
     async def scrape_guides(self, game_name: str):
         # Replace spaces with hyphens for URLs
@@ -172,7 +172,7 @@ class GamersCompass:
         # Encode other special characters in the game name
         encoded_game_name = urllib.parse.quote(game_name)
         
-        url = f"https://www.gamespot.com/games/{encoded_game_name}/guides/"
+        url = f"https://sea.ign.com/{encoded_game_name}"
         
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as response:
@@ -189,7 +189,7 @@ class GamersCompass:
                     
                     return guide_items
                 else:
-                    return "Failed to retrieve guides"
+                    return "Incorrect Game Title!"
 
 
     async def close(self):
@@ -429,3 +429,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
